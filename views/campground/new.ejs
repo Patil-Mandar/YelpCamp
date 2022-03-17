@@ -1,0 +1,43 @@
+<% layout('/layouts/boilerplate')  %> 
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">Add new Campground</h1>
+            <form class="needs-validation" action="/campground/new" method="post" enctype="multipart/form-data" novalidate >    <!--novalidate stops deafault behaviour of browser for valdation and use bootstrap & enctype="multipart/form-data" is for getting photos file-->
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" type="text" id="title" name="campground[title]" placeholder="name" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" type="text" id="location" name="campground[location]" placeholder="city, state" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Image</label>
+                    <input class="form-control" type="file" name="image" id="image" multiple required>
+                </div>
+                <!-- <div class="mb-3">
+                    <label class="form-label" for="image">Image</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon3">https://example.com/...</span>
+                        <input class="form-control" type="text" id="image" name="campground[image]" placeholder="url" required>
+                    </div>
+                </div> -->
+                <div class="mb-3">
+                    <label class="form-label" for="price">Price</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon3">$</span>
+                        <input class="form-control" type="text" id="price" name="campground[price]" placeholder="0.00" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" type="text" id="description" name="campground[description]" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Add</button>
+                    <a href="/campground" class="btn btn-secondary mx-3">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+

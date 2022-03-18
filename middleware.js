@@ -26,7 +26,7 @@ module.exports.isAuthor = async (req,res,next)=>{
 module.exports.isreviewAuthor = async (req,res,next)=>{
     const {id,reviewid} = req.params
     const review = await Review.findById(reviewid)
-    if(!review.author.equals(req.user._id)){s
+    if(!review.author.equals(req.user._id)){
         req.flash('error','You are not authorizes to do that!')
         return res.redirect(`/campground/${id}`)
     }
